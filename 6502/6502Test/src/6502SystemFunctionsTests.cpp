@@ -48,7 +48,7 @@ TEST_F( M6502SystemFunctionsTests, BRKWillLoadTheProgramCounterFromTheInterruptV
 	mem[0xFFFE] = 0x00;
 	mem[0xFFFF] = 0x80;
 	constexpr s32 EXPECTED_CYCLES = 7;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -67,7 +67,7 @@ TEST_F( M6502SystemFunctionsTests, BRKWillLoadTheProgramCounterFromTheInterruptV
 	mem[0xFFFE] = 0x00;
 	mem[0xFFFF] = 0x90;
 	constexpr s32 EXPECTED_CYCLES = 7;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -85,7 +85,7 @@ TEST_F( M6502SystemFunctionsTests, BRKWillSetTheBreakFlag )
 	cpu.Flag.B = false;
 	mem[0xFF00] = CPU::INS_BRK;
 	constexpr s32 EXPECTED_CYCLES = 7;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );

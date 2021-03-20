@@ -708,7 +708,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitZeroPage )
 	mem[0xFFFC] = CPU::INS_BIT_ZP;	
 	mem[0xFFFD] = 0x42;
 	mem[0x0042] = 0xCC;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 3;
 
 	//when:
@@ -731,7 +731,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitZeroPageResultZero )
 	mem[0xFFFC] = CPU::INS_BIT_ZP;
 	mem[0xFFFD] = 0x42;
 	mem[0x0042] = 0x33;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 3;
 
 	//when:
@@ -754,7 +754,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitZeroPageResultZeroBits6And7Zero )
 	mem[0xFFFC] = CPU::INS_BIT_ZP;
 	mem[0xFFFD] = 0x42;
 	mem[0x0042] = 0xCC;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 3;
 
 	//when:
@@ -797,7 +797,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitAbsolute )
 	mem[0xFFFD] = 0x00;
 	mem[0xFFFE] = 0x80;
 	mem[0x8000] = 0xCC;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 4;
 
 	//when:
@@ -821,7 +821,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitAbsoluteResultZero )
 	mem[0xFFFD] = 0x00;
 	mem[0xFFFE] = 0x80;
 	mem[0x8000] = 0x33;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 4;
 
 	//when:
@@ -845,7 +845,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitAbsoluteResultZeroBit6And7Zero )
 	mem[0xFFFD] = 0x00;
 	mem[0xFFFE] = 0x80;
 	mem[0x8000] = 0xCC;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 4;
 
 	//when:
@@ -869,7 +869,7 @@ TEST_F( M6502AndEorOraBitTests, TestBitAbsoluteResultZeroBit6And7Mixed )
 	mem[0xFFFD] = 0x00;
 	mem[0xFFFE] = 0x80;
 	mem[0x8000] = 0b10000000;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 	constexpr s32 EXPECTED_CYCLES = 4;
 
 	//when:

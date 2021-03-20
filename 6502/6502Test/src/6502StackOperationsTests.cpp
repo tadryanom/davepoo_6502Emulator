@@ -27,7 +27,7 @@ TEST_F( M6502StackOperationsTests, TSXCanTransferTheStackPointerToXRegister )
 	cpu.SP = 0x01;
 	mem[0xFF00] = CPU::INS_TSX;
 	constexpr s32 EXPECTED_CYCLES = 2;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -49,7 +49,7 @@ TEST_F( M6502StackOperationsTests, TSXCanTransferAZeroStackPointerToXRegister )
 	cpu.SP = 0x00;
 	mem[0xFF00] = CPU::INS_TSX;
 	constexpr s32 EXPECTED_CYCLES = 2;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -71,7 +71,7 @@ TEST_F( M6502StackOperationsTests, TSXCanTransferANegativeStackPointerToXRegiste
 	cpu.SP = 0b10000000;
 	mem[0xFF00] = CPU::INS_TSX;
 	constexpr s32 EXPECTED_CYCLES = 2;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -133,7 +133,7 @@ TEST_F( M6502StackOperationsTests, PLACanPullAValueFromTheStackIntoTheARegsiter 
 	mem[0x01FF] = 0x42;
 	mem[0xFF00] = CPU::INS_PLA;
 	constexpr s32 EXPECTED_CYCLES = 4;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -156,7 +156,7 @@ TEST_F( M6502StackOperationsTests, PLACanPullAZeroValueFromTheStackIntoTheARegsi
 	mem[0x01FF] = 0x00;
 	mem[0xFF00] = CPU::INS_PLA;
 	constexpr s32 EXPECTED_CYCLES = 4;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -181,7 +181,7 @@ TEST_F( M6502StackOperationsTests, PLACanPullANegativeValueFromTheStackIntoTheAR
 	mem[0x01FF] = 0b10000001;
 	mem[0xFF00] = CPU::INS_PLA;
 	constexpr s32 EXPECTED_CYCLES = 4;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -223,7 +223,7 @@ TEST_F( M6502StackOperationsTests, PHPAlwaysSetsBits4And5OnTheStack )
 	cpu.PS = 0x0;
 	mem[0xFF00] = CPU::INS_PHP;
 	constexpr s32 EXPECTED_CYCLES = 3;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -253,7 +253,7 @@ TEST_F( M6502StackOperationsTests, PLPCanPullAValueFromTheStackIntoTheProcessorS
 	mem[0x01FF] = 0x42 | CPU::BreakFlagBit | CPU::UnusedFlagBit;
 	mem[0xFF00] = CPU::INS_PLP;
 	constexpr s32 EXPECTED_CYCLES = 4;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );
@@ -273,7 +273,7 @@ TEST_F( M6502StackOperationsTests, PLPClearsBits4And5WhenPullingFromTheStack )
 	mem[0x01FF] = CPU::BreakFlagBit | CPU::UnusedFlagBit;
 	mem[0xFF00] = CPU::INS_PLP;
 	constexpr s32 EXPECTED_CYCLES = 4;
-	CPU CPUCopy = cpu;
+//	CPU CPUCopy = cpu;
 
 	// when:
 	const s32 ActualCycles = cpu.Execute( EXPECTED_CYCLES, mem );

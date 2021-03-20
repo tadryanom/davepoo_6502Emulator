@@ -103,6 +103,8 @@ public:
 			Register = &cpu.Y;
 			Opcode = CPU::INS_CPY;
 			break;
+        case ERegister::A:
+            break;
 		};
 		*Register = Test.RegisterValue;
 
@@ -144,6 +146,8 @@ public:
 			Register = &cpu.Y;
 			Opcode = CPU::INS_CPY_ZP;
 			break;
+        case ERegister::A:
+            break;
 		};
 		*Register = Test.RegisterValue;
 		mem[0xFF00] = Opcode;
@@ -214,6 +218,8 @@ public:
 			Register = &cpu.Y;
 			Opcode = CPU::INS_CPY_ABS;
 			break;
+        case ERegister::A:
+            break;
 		};
 		*Register = Test.RegisterValue;
 
